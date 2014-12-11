@@ -136,14 +136,14 @@ def compatiple(context, data1, data2):
 
 if __name__ == "__main__":
 
-    if len(sys.args) != 3:
+    if len(sys.argv) != 3:
         print __doc__
         sys.exit(1)
 
-    url1 = sys.args[1]
-    url2 = sys.args[2]
-    data1 = json(requests.get(url1).text)
-    data2 = json(requests.get(url2).text)
+    url1 = sys.argv[1]
+    url2 = sys.argv[2]
+    data1 = json.loads(requests.get(url1).text)
+    data2 = json.loads(requests.get(url2).text)
 
     try:
         compatiple('root', data1, data2)
